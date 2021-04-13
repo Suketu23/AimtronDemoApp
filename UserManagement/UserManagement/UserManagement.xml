@@ -1,0 +1,773 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UserManagement</name>
+    </assembly>
+    <members>
+        <member name="T:UserManagement.Controller.BaseApiController">
+            <summary>
+            Base api controller
+            </summary>
+        </member>
+        <member name="F:UserManagement.Controller.BaseApiController.BaseRoute">
+            <summary>
+            Base route
+            </summary>
+        </member>
+        <member name="T:UserManagement.Controller.BaseResponseModel.IResponse`1">
+            <summary>
+            IResponse interface
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.BaseResponseModel.IResponse`1.ErrorMessages">
+            <summary>
+            Error Message
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.BaseResponseModel.IResponse`1.Model">
+            <summary>
+            Model
+            </summary>
+        </member>
+        <member name="T:UserManagement.Controller.BaseResponseModel.BaseResponse`1">
+            <summary>
+            Response model
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.BaseResponseModel.BaseResponse`1.ErrorMessages">
+            <summary>
+            Error message
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.BaseResponseModel.BaseResponse`1.Model">
+            <summary>
+            Model
+            </summary>
+        </member>
+        <member name="T:UserManagement.Controller.BaseResponseModel.ResponseExtensions">
+            <summary>
+            Response extension class
+            </summary>
+        </member>
+        <member name="M:UserManagement.Controller.BaseResponseModel.ResponseExtensions.ToHttpResponse``1(UserManagement.Controller.BaseResponseModel.IResponse{``0},System.Net.HttpStatusCode)">
+            <summary>
+            To http response extension method
+            </summary>
+            <param name="response"></param>
+            <returns></returns>
+        </member>
+        <member name="T:UserManagement.Controller.Department.DepartmentController">
+            <summary>
+            Controller to handle department related actions
+            </summary>
+        </member>
+        <member name="M:UserManagement.Controller.Department.DepartmentController.#ctor(UserManagement.Database.Entities.Department.IDepartmentRepository)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="departmentRepository"></param>
+        </member>
+        <member name="M:UserManagement.Controller.Department.DepartmentController.GetAsync(System.Guid)">
+            <summary>
+            Get department details based on id
+            </summary>
+            <param name="departmentId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserManagement.Controller.Department.DepartmentController.IndexAsync">
+            <summary>
+            Get all departments
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UserManagement.Controller.Department.DepartmentController.SaveAsync(UserManagement.Controller.Department.Post.Request)">
+            <summary>
+            Save department in the database
+            This method will add department if doesn't exist and update is department exist
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="P:UserManagement.Controller.Department.Get.Response.Id">
+            <summary>
+            Id of the department
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.Department.Get.Response.Name">
+            <summary>
+            Name of the department
+            </summary>
+        </member>
+        <member name="T:UserManagement.Controller.Department.Index.Response">
+            <summary>
+            Response model to get list of all available departments
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.Department.Index.Response.Departments">
+            <summary>
+            List of departments
+            </summary>
+        </member>
+        <member name="T:UserManagement.Controller.Department.Index.Department">
+            <summary>
+            Department class
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.Department.Index.Department.Id">
+            <summary>
+            Id of the department
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.Department.Index.Department.Name">
+            <summary>
+            name of the department
+            </summary>
+        </member>
+        <member name="T:UserManagement.Controller.Department.Post.Request">
+            <summary>
+            Request to add new department
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.Department.Post.Request.Id">
+            <summary>
+            Id of the department
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.Department.Post.Request.Name">
+            <summary>
+            Name of the department
+            </summary>
+        </member>
+        <member name="T:UserManagement.Controller.Department.Post.Response">
+            <summary>
+            Response model on successful creation of department
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.Department.Post.Response.Id">
+            <summary>
+            Id of the newly created department
+            </summary>
+        </member>
+        <member name="T:UserManagement.Controller.LogIn.LogInController">
+            <summary>
+            Controller to handle login related actions
+            </summary>
+        </member>
+        <member name="M:UserManagement.Controller.LogIn.LogInController.#ctor(UserManagement.Database.Entities.User.IUserRepository)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="userRepository"></param>
+        </member>
+        <member name="M:UserManagement.Controller.LogIn.LogInController.IsValidLogInAsync(UserManagement.Controller.LogIn.Validate.Request)">
+            <summary>
+            Method to validate user log-in credentials
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserManagement.Controller.LogIn.LogInController.CreateLogInAsync(UserManagement.Controller.LogIn.Post.Request)">
+            <summary>
+            Log in method
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="T:UserManagement.Controller.LogIn.Post.Request">
+            <summary>
+            Request model to login with email and password
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.LogIn.Post.Request.Email">
+            <summary>
+            Email address to login
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.LogIn.Post.Request.Password">
+            <summary>
+            Password to loging
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.LogIn.Post.Request.RoleId">
+            <summary>
+            Id of the role
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.LogIn.Post.Request.DepartmentId">
+            <summary>
+            Id of the department
+            </summary>
+        </member>
+        <member name="T:UserManagement.Controller.LogIn.Validate.Request">
+            <summary>
+            Request model to validate log-in credentials
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.LogIn.Validate.Request.Email">
+            <summary>
+            Email address of the user
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.LogIn.Validate.Request.Password">
+            <summary>
+            Password of the user
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.Role.Get.Response.Id">
+            <summary>
+            Id of the role
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.Role.Get.Response.Name">
+            <summary>
+            Name of the role
+            </summary>
+        </member>
+        <member name="T:UserManagement.Controller.Role.Index.Response">
+            <summary>
+            Response model to get list of all available roles
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.Role.Index.Response.Roles">
+            <summary>
+            List of departments
+            </summary>
+        </member>
+        <member name="T:UserManagement.Controller.Role.Index.Role">
+            <summary>
+            Role class
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.Role.Index.Role.Id">
+            <summary>
+            Id of the role
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.Role.Index.Role.Name">
+            <summary>
+            Name of the role
+            </summary>
+        </member>
+        <member name="T:UserManagement.Controller.Role.Post.Request">
+            <summary>
+            Request model to create new role
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.Role.Post.Request.Id">
+            <summary>
+            Id of the role
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.Role.Post.Request.Name">
+            <summary>
+            Name of the role
+            </summary>
+        </member>
+        <member name="T:UserManagement.Controller.Role.Post.Response">
+            <summary>
+            Response model on successful creation of Role
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.Role.Post.Response.Id">
+            <summary>
+            Id of the role
+            </summary>
+        </member>
+        <member name="T:UserManagement.Controller.Role.RoleController">
+            <summary>
+            Controller to handle role related actions
+            </summary>
+        </member>
+        <member name="M:UserManagement.Controller.Role.RoleController.#ctor(UserManagement.Database.Entities.Role.IRoleRepository)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="roleRepository"></param>
+        </member>
+        <member name="M:UserManagement.Controller.Role.RoleController.GetAsync(System.Guid)">
+            <summary>
+            Get role details based on id
+            </summary>
+            <param name="roleId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserManagement.Controller.Role.RoleController.IndexAsync">
+            <summary>
+            Get all roles
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UserManagement.Controller.Role.RoleController.SaveAsync(UserManagement.Controller.Role.Post.Request)">
+            <summary>
+            Save role in the database
+            This method will add role if doesn't exist and update is role exist
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="T:UserManagement.Controller.User.Get.Response">
+            <summary>
+            Response model to get user details
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.User.Get.Response.Id">
+            <summary>
+            Id of the user
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.User.Get.Response.FirstName">
+            <summary>
+            First name of the user
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.User.Get.Response.LastName">
+            <summary>
+            Last name of the user
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.User.Get.Response.Email">
+            <summary>
+            Email address of the user
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.User.Get.Response.PhoneNumber">
+            <summary>
+            Phone number of the user
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.User.Get.Response.RoleId">
+            <summary>
+            Id of the role
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.User.Get.Response.DepartmentId">
+            <summary>
+            Id of the department
+            </summary>
+        </member>
+        <member name="T:UserManagement.Controller.User.Index.Response">
+            <summary>
+            Response model get all users
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.User.Index.Response.Users">
+            <summary>
+            List of users
+            </summary>
+        </member>
+        <member name="T:UserManagement.Controller.User.Index.User">
+            <summary>
+            User class
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.User.Index.User.Id">
+            <summary>
+            Id of the user
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.User.Index.User.FirstName">
+            <summary>
+            First name of the user
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.User.Index.User.LastName">
+            <summary>
+            Last name of the user
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.User.Index.User.Email">
+            <summary>
+            Email address of the user
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.User.Index.User.PhoneNumber">
+            <summary>
+            Phone number of the user
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.User.Index.User.RoleId">
+            <summary>
+            Id of the role
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.User.Index.User.DepartmentId">
+            <summary>
+            Id of the department
+            </summary>
+        </member>
+        <member name="T:UserManagement.Controller.User.Post.Request">
+            <summary>
+            Request model to create new user
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.User.Post.Request.Id">
+            <summary>
+            Id of the user
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.User.Post.Request.FirstName">
+            <summary>
+            First name of the user
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.User.Post.Request.LastName">
+            <summary>
+            Last name of the user
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.User.Post.Request.Email">
+            <summary>
+            Email address of the user
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.User.Post.Request.PhoneNumber">
+            <summary>
+            Phone number of the user
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.User.Post.Request.RoleId">
+            <summary>
+            Id of the role
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.User.Post.Request.DepartmentId">
+            <summary>
+            Id of the department
+            </summary>
+        </member>
+        <member name="T:UserManagement.Controller.User.Post.Response">
+            <summary>
+            Response model on successful creation of user
+            </summary>
+        </member>
+        <member name="P:UserManagement.Controller.User.Post.Response.Id">
+            <summary>
+            Id of the user
+            </summary>
+        </member>
+        <member name="T:UserManagement.Controller.User.UserController">
+            <summary>
+            Controller to handle user related actions
+            </summary>
+        </member>
+        <member name="M:UserManagement.Controller.User.UserController.#ctor(UserManagement.Database.Entities.User.IUserRepository)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="userRepository"></param>
+        </member>
+        <member name="M:UserManagement.Controller.User.UserController.GetAsync(System.Guid)">
+            <summary>
+            Get user details based on id
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserManagement.Controller.User.UserController.IndexAsync">
+            <summary>
+            Get all users
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UserManagement.Controller.User.UserController.SaveAsync(UserManagement.Controller.User.Post.Request)">
+            <summary>
+            Save user in the database
+            This method will add user if doesn't exist and update is user exist
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="T:UserManagement.Database.Constants.Constant">
+            <summary>
+            Constants for database related changes
+            </summary>
+        </member>
+        <member name="T:UserManagement.Database.Entities.Department.Department">
+            <summary>
+            Department entity
+            </summary>
+        </member>
+        <member name="M:UserManagement.Database.Entities.Department.Department.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:UserManagement.Database.Entities.Department.Department.Id">
+            <summary>
+            Id of the department
+            </summary>
+        </member>
+        <member name="P:UserManagement.Database.Entities.Department.Department.Name">
+            <summary>
+            Name of the department
+            </summary>
+        </member>
+        <member name="T:UserManagement.Database.Entities.Department.DepartmentRepository">
+            <summary>
+            Department repository
+            </summary>
+        </member>
+        <member name="M:UserManagement.Database.Entities.Department.DepartmentRepository.GetByIdAsync(System.Guid)">
+            <summary>
+            Get department by id
+            </summary>
+            <param name="departmentId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserManagement.Database.Entities.Department.DepartmentRepository.IndexAsync">
+            <summary>
+            Get list of all departments`
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:UserManagement.Database.Entities.Role.Role">
+            <summary>
+            Role entity
+            </summary>
+        </member>
+        <member name="P:UserManagement.Database.Entities.Role.Role.Id">
+            <summary>
+            Id of the role
+            </summary>
+        </member>
+        <member name="M:UserManagement.Database.Entities.Role.RoleRepository.GetByIdAsync(System.Guid)">
+            <summary>
+            Get role by id
+            </summary>
+            <param name="roleId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserManagement.Database.Entities.Role.RoleRepository.IndexAsync">
+            <summary>
+            Get list of all roles
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UserManagement.Database.Entities.Role.RoleRepository.SaveAsync(UserManagement.Database.Models.RoleDto)">
+            <summary>
+            Save role
+            </summary>
+            <param name="roleDto"></param>
+            <returns></returns>
+        </member>
+        <member name="T:UserManagement.Database.Entities.User.User">
+            <summary>
+            User entity
+            </summary>
+        </member>
+        <member name="M:UserManagement.Database.Entities.User.User.#ctor(System.String,System.Guid,System.Guid,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="email"></param>
+            <param name="roleId"></param>
+            <param name="departmentId"></param>
+            <param name="password"></param>
+        </member>
+        <member name="M:UserManagement.Database.Entities.User.User.Update(System.String,System.String,System.String,System.Guid,System.Guid)">
+            <summary>
+            Update user details
+            </summary>
+            <param name="firstName"></param>
+            <param name="lastName"></param>
+            <param name="phoneNumber"></param>
+            <param name="roleId"></param>
+            <param name="departmentId"></param>
+        </member>
+        <member name="P:UserManagement.Database.Entities.User.User.Id">
+            <summary>
+            Id of the user
+            </summary>
+        </member>
+        <member name="P:UserManagement.Database.Entities.User.User.FirstName">
+            <summary>
+            First name of the user
+            </summary>
+        </member>
+        <member name="P:UserManagement.Database.Entities.User.User.LastName">
+            <summary>
+            Last name of the user
+            </summary>
+        </member>
+        <member name="P:UserManagement.Database.Entities.User.User.Email">
+            <summary>
+            Email address of the user
+            </summary>
+        </member>
+        <member name="P:UserManagement.Database.Entities.User.User.PhoneNumber">
+            <summary>
+            Phone number of the user
+            </summary>
+        </member>
+        <member name="P:UserManagement.Database.Entities.User.User.RoleId">
+            <summary>
+            Id of the Role
+            </summary>
+        </member>
+        <member name="P:UserManagement.Database.Entities.User.User.DepartmentId">
+            <summary>
+            Id of the Department
+            </summary>
+        </member>
+        <member name="P:UserManagement.Database.Entities.User.User.Password">
+            <summary>
+            Password of the user
+            </summary>
+        </member>
+        <member name="T:UserManagement.Database.Entities.User.UserRepository">
+            <summary>
+            User repository to modify user entities
+            </summary>
+        </member>
+        <member name="M:UserManagement.Database.Entities.User.UserRepository.#ctor(UserManagement.Database.DatabaseContext.IDbContext)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="dbContext"></param>
+        </member>
+        <member name="M:UserManagement.Database.Entities.User.UserRepository.GetByIdAsync(System.Guid)">
+            <summary>
+            Get user details based on id
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserManagement.Database.Entities.User.UserRepository.IndexAsync">
+            <summary>
+            Get all users
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UserManagement.Database.Entities.User.UserRepository.CreateLogInUserAsync(UserManagement.Database.Models.UserLogInDto)">
+            <summary>
+            Create log in user in the database
+            </summary>
+            <param name="userLogInDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserManagement.Database.Entities.User.UserRepository.IsLogInUserExistAsync(System.String,System.String)">
+            <summary>
+            Method to check log-in user existence
+            </summary>
+            <param name="email"></param>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UserManagement.Database.Entities.User.UserRepository.SaveAsync(UserManagement.Database.Models.UserDto)">
+            <summary>
+            Save user
+            </summary>
+            <param name="userDto"></param>
+            <returns></returns>
+        </member>
+        <member name="T:UserManagement.Database.Fake.FakeDatabaseContext">
+            <summary>
+            Fake database context for the unit tests
+            This won't work with actual database so we can avoid dependency on real database for unit tests
+            </summary>
+        </member>
+        <member name="P:UserManagement.Database.Models.DepartmentDto.Id">
+            <summary>
+            Id of the department
+            </summary>
+        </member>
+        <member name="P:UserManagement.Database.Models.DepartmentDto.Name">
+            <summary>
+            Name of the department
+            </summary>
+        </member>
+        <member name="P:UserManagement.Database.Models.RoleDto.Id">
+            <summary>
+            Id of the role
+            </summary>
+        </member>
+        <member name="P:UserManagement.Database.Models.RoleDto.Name">
+            <summary>
+            Name of the role
+            </summary>
+        </member>
+        <member name="T:UserManagement.Database.Models.UserCreationResponse">
+            <summary>
+            User response class
+            </summary>
+        </member>
+        <member name="M:UserManagement.Database.Models.UserCreationResponse.#ctor(System.Guid,System.Boolean,System.Boolean)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="id"></param>
+            <param name="invalidDepartment"></param>
+            <param name="invalidRole"></param>
+        </member>
+        <member name="P:UserManagement.Database.Models.UserDto.Id">
+            <summary>
+            Id of the user
+            </summary>
+        </member>
+        <member name="P:UserManagement.Database.Models.UserDto.FirstName">
+            <summary>
+            First name of the user
+            </summary>
+        </member>
+        <member name="P:UserManagement.Database.Models.UserDto.LastName">
+            <summary>
+            Last name of the user
+            </summary>
+        </member>
+        <member name="P:UserManagement.Database.Models.UserDto.Email">
+            <summary>
+            Email address of the user
+            </summary>
+        </member>
+        <member name="P:UserManagement.Database.Models.UserDto.PhoneNumber">
+            <summary>
+            Phone number of the user
+            </summary>
+        </member>
+        <member name="P:UserManagement.Database.Models.UserDto.RoleId">
+            <summary>
+            Id of the role assigned to user
+            </summary>
+        </member>
+        <member name="P:UserManagement.Database.Models.UserDto.DepartmentId">
+            <summary>
+            Id of the department
+            </summary>
+        </member>
+        <member name="T:UserManagement.Database.Models.UserLogInDto">
+            <summary>
+            User log in model
+            </summary>
+        </member>
+        <member name="M:UserManagement.Database.Models.UserLogInDto.#ctor(System.String,System.String,System.Guid,System.Guid)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="email"></param>
+            <param name="password"></param>
+            <param name="roleId"></param>
+            <param name="departmentId"></param>
+            <param name=""></param>
+        </member>
+        <member name="P:UserManagement.Database.Models.UserLogInDto.Email">
+            <summary>
+            Email address of the user
+            </summary>
+        </member>
+        <member name="P:UserManagement.Database.Models.UserLogInDto.Password">
+            <summary>
+            Password of the user
+            </summary>
+        </member>
+        <member name="P:UserManagement.Database.Models.UserLogInDto.RoleId">
+            <summary>
+            Id of the role for user
+            </summary>
+        </member>
+        <member name="P:UserManagement.Database.Models.UserLogInDto.DepartmentId">
+            <summary>
+            Id of the department for the user
+            </summary>
+        </member>
+    </members>
+</doc>
