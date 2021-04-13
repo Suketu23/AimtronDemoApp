@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/UserManagement/.vs/UserManagement
+/UserManagement/UserManagement/bin/Debug/netcoreapp3.1
+/UserManagement/UserManagement/obj
+/UserManagement/UserManagementTest/bin/Debug/netcoreapp3.1
+/UserManagement/UserManagementTest/obj/Debug/netcoreapp3.1
+/UserManagement/UserManagementTest/obj
