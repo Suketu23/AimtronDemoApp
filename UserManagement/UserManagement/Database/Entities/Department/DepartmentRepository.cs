@@ -15,6 +15,10 @@ namespace UserManagement.Database.Entities.Department
     {
         private readonly IDbContext _dbContext;
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="dbContext"></param>
         public DepartmentRepository(IDbContext dbContext)
         {
             _dbContext = dbContext;
@@ -42,6 +46,11 @@ namespace UserManagement.Database.Entities.Department
             return await _dbContext.Departments.Select(department => new DepartmentDto(department.Id, department.Name)).ToListAsync();
         }
 
+        /// <summary>
+        /// Save department
+        /// </summary>
+        /// <param name="departmentDto"></param>
+        /// <returns></returns>
         public async Task<Guid> SaveAsync(DepartmentDto departmentDto)
         {
             var department = await _dbContext.Departments.FirstOrDefaultAsync(department => department.Id == departmentDto.Id);

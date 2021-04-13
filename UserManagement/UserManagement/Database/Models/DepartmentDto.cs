@@ -14,11 +14,11 @@ namespace UserManagement.Database.Models
         /// <summary>
         /// Id of the department
         /// </summary>
-        public Guid Id { get; }
+        public Guid Id { get; private set; }
 
         /// <summary>
         /// Name of the department
         /// </summary>
-        public string Name { get; }
+        public string Name { get; private set; }
     }
 }
