@@ -20,8 +20,8 @@ namespace UserManagement.Database.Models
             InvalidRole = invalidRole;
         }
 
-        public Guid Id { get; }
-        public bool InvalidDepartment { get; }
-        public bool InvalidRole { get; }
+        public Guid Id { get; private set; }
+        public bool InvalidDepartment { get; private set; }
+        public bool InvalidRole { get; private set; }
     }
 }
