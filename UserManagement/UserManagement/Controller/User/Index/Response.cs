@@ -27,10 +27,10 @@ namespace UserManagement.Controller.User.Index
                 Users = userDtos.Select(u => new User
                 {
                     Id = u.Id,
-                    FirstName = u.FirstName,
-                    LastName = u.LastName,
+                    FirstName = u?.FirstName,
+                    LastName = u?.LastName,
                     Email = u.Email,
-                    PhoneNumber = u.PhoneNumber,
+                    PhoneNumber = u?.PhoneNumber,
                     RoleId = u.RoleId,
                     DepartmentId = u.DepartmentId
                 })
