@@ -11,10 +11,10 @@ namespace UserManagement.Database.EntityConfigurations
         {
             builder.ToTable(Constant.UserTableName, Constant.SchemaName);
 
-            builder.Property(u => u.FirstName).HasMaxLength(20).IsRequired();
-            builder.Property(u => u.LastName).HasMaxLength(20).IsRequired();
+            builder.Property(u => u.FirstName).HasMaxLength(20);
+            builder.Property(u => u.LastName).HasMaxLength(20);
             builder.Property(u => u.Email).HasMaxLength(50).IsRequired();
-            builder.Property(u => u.PhoneNumber).HasMaxLength(20).IsRequired(); 
+            builder.Property(u => u.PhoneNumber).HasMaxLength(20); 
         }
     }
 }

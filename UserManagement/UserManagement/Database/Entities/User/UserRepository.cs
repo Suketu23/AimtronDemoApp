@@ -43,9 +43,8 @@ namespace UserManagement.Database.Entities.User
         /// <returns></returns>
         public async Task<IEnumerable<UserDto>> IndexAsync()
         {
-            return await _dbContext.Users
-                .Select(user => new UserDto(user.Id, user.FirstName, user.LastName, user.Email, user.PhoneNumber, user.RoleId, user.DepartmentId))
-                .ToListAsync();
+            var users = await _dbContext.Users.ToListAsync();
+            return users?.Select(u => new UserDto(u.Id, u?.FirstName, u?.LastName, u.Email, u?.PhoneNumber, u.RoleId, u.DepartmentId));
         }
 
         /// <summary>
