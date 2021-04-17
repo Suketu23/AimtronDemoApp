@@ -1,0 +1,126 @@
+<form
+  class="user-form"
+  [formGroup]="userform"
+  (ngSubmit)="editUserProfile(userform.value)"
+  novalidate
+>
+  <table cellspacing="0">
+    <tr>
+      <td>
+        <mat-form-field>
+          <input
+            matInput
+            type="text"
+            formControlName="firstName"
+            placeholder="First Name"
+            required
+          />
+          <mat-error>
+            <app-error-message
+              [control]="userform.controls.firstName"
+            ></app-error-message>
+          </mat-error>
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field>
+          <input
+            matInput
+            type="text"
+            formControlName="lastName"
+            placeholder="Last Name"
+            required
+          />
+          <mat-error>
+            <app-error-message
+              [control]="userform.controls.lastName"
+            ></app-error-message>
+          </mat-error>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-form-field>
+          <input
+            matInput
+            type="email"
+            formControlName="email"
+            placeholder="User Email"
+            required
+          />
+          <mat-error>
+            <app-error-message
+              [control]="userform.controls.email"
+            ></app-error-message>
+          </mat-error>
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field>
+          <input
+            matInput
+            type="text"
+            formControlName="phoneNumber"
+            placeholder="Phone Number"
+            required
+          />
+          <mat-error>
+            <app-error-message
+              [control]="userform.controls.phoneNumber"
+            ></app-error-message>
+          </mat-error>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-form-field>
+          <mat-select
+            formControlName="roleId"
+            placeholder="Choose Role"
+            required
+            [disabled]="disableRoles"
+          >
+            <mat-option *ngFor="let role of roleList" [value]="role.id">{{
+              role.name
+            }}</mat-option>
+          </mat-select>
+          <mat-error>
+            <app-error-message
+              [control]="userform.controls.roleId"
+            ></app-error-message>
+          </mat-error>
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field>
+          <mat-select
+            formControlName="departmentId"
+            placeholder="Choose Department"
+            required
+            [disabled]="disableRoles"
+          >
+            <mat-option *ngFor="let dept of departmentList" [value]="dept.id">{{
+              dept.name
+            }}</mat-option>
+          </mat-select>
+          <mat-error>
+            <app-error-message
+              [control]="userform.controls.departmentId"
+            ></app-error-message>
+          </mat-error>
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+
+  <button
+    mat-raised-button
+    class="form-btn btnSubmit"
+    color="primary"
+    [disabled]="userform.invalid"
+  >
+    Submit
+  </button>
+</form>

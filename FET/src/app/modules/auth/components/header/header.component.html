@@ -1,0 +1,30 @@
+<mat-toolbar color="primary">
+  <span (click)="toggleSide()">
+    <img
+      class="logo"
+      src="../../../../../assets/images/app-logo.png"
+      aria-hidden="false"
+      aria-label="logo"
+    />
+  </span>
+  <mat-toolbar-row class="header-row">
+    <mat-icon
+      [matMenuTriggerFor]="menu"
+      class="example-icon"
+      aria-hidden="false"
+      aria-label="Menu icon"
+      >menu</mat-icon
+    >
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="goToProfile()">
+    <mat-icon>person</mat-icon>
+    <span>Profile</span>
+  </button>
+  <button mat-menu-item (click)="logout()">
+    <mat-icon>power_settings_new</mat-icon>
+    <span>Logout</span>
+  </button>
+</mat-menu>

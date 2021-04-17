@@ -1,0 +1,15 @@
+.mat-cell {
+    width: 800px;
+  }
+  
+  .form {
+    width: 780px;
+    display: flex;
+    .mat-form-field{
+        width: 100%;
+    }
+    .button {
+      width: 20px;
+    }
+  }
+  
