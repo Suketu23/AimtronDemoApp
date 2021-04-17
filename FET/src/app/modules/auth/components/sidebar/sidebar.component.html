@@ -1,0 +1,31 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav mode="side" opened="true" class="side-nav">
+    <mat-nav-list>
+      <div *ngFor="let nav of sidebarList">
+        <mat-list-item
+          class="parent"
+          (click)="onClickMenuItem(nav)"
+          *ngIf="nav.hasAccess"
+        >
+          <mat-icon mat-list-icon *ngIf="nav.icon" class="item-icon">{{
+            nav.icon
+          }}</mat-icon>
+          <span *ngIf="!opened" class="item-text full-width">{{
+            nav.displayName
+          }}</span>
+          <mat-icon
+            class="menu-button item-icon"
+            [ngClass]="{ rotated: nav.isExpanded }"
+            *ngIf="!opened && nav.subMenus"
+          >
+            expand_more
+          </mat-icon>
+        </mat-list-item>
+      </div>
+    </mat-nav-list>
+    <mat-nav-list> </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="sidenav-content">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,27 @@
+h3 {
+  text-align: center;
+}
+
+.sign-in {
+  margin-right: 15px;
+}
+
+.userLogin {
+  // display: flex;
+  margin: 15px;
+  height: 50px;
+}
+
+.login-form {
+  text-align: center;
+}
+
+.btnSubmit {
+  position: relative;
+}
+
+button.invitedUser.mat-raised-button.mat-primary {
+  position: absolute;
+  top: 245px;
+  left: 730px;
+}
